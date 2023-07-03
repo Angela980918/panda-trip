@@ -43,7 +43,7 @@ const itemClick = (index,path) => {
   bottom: 0;
   right: 0;
   left: 0;
-  height: 60px;
+  height: 55px;
 
   // flex布局,
   display: flex;
@@ -69,12 +69,13 @@ const itemClick = (index,path) => {
 
     //icon大小
     img {
-      height: 36px;
+      height: 30px;
     }
 
     //icon文本
     .text {
       font-size: 12px;
+      margin-top: 3px;
     }
 
     // 选中后的颜色

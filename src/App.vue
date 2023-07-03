@@ -1,6 +1,5 @@
 <template>
   <div class="app">
-    初始化项目
     <router-view></router-view>
   <tab-bar></tab-bar>
   </div>
