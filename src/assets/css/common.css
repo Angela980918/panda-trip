@@ -1,0 +1,15 @@
+/* custom */
+a {
+  color: black;
+  text-decoration: none;
+  backface-visibility: hidden;
+}
+
+:root {
+  /* 主题颜色 */
+  --primary-color: #3cb490;
+}
+
+body {
+  font-size: 14px;
+}
