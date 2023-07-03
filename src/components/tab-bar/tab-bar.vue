@@ -5,8 +5,9 @@
     <router-link to="/order">订单</router-link>
     <router-link to="/message">消息</router-link> -->
     <template v-for="(item, index) in tabbarData" :key="index">
-      <div class="tab-bar-item" :class="{ active: currentIndex === index }">
-        <img :src="getAssetUrl(item.image)" alt="">
+      <div class="tab-bar-item" :class="{ active: currentIndex === index }" @click="itemClick(index, item.path)">
+        <img v-if="currentIndex === index" :src="getAssetUrl(item.imageActive)" alt="">
+        <img v-else :src="getAssetUrl(item.image)" alt="">
         <div class="text">{{ item.text }}</div>
       </div>
     </template>
@@ -18,9 +19,17 @@
 import tabbarData from '@/assets/data/tabbar.js'
 import { getAssetUrl } from '@/utils/get_img.js'
 import { ref } from 'vue';
+import { useRouter } from 'vue-router';
 
-
+const router = useRouter()
 const currentIndex = ref(0)
+
+const itemClick = (index,path) => {
+  // console.log(index);
+  currentIndex.value = index
+  router.push(path)
+
+}
 
 
 
@@ -34,7 +43,7 @@ const currentIndex = ref(0)
   bottom: 0;
   right: 0;
   left: 0;
-  height: 55px;
+  height: 60px;
 
   // flex布局,
   display: flex;
@@ -66,6 +75,11 @@ const currentIndex = ref(0)
     //icon文本
     .text {
       font-size: 12px;
+    }
+
+    // 选中后的颜色
+    &.active {
+      color: var(--primary-color)
     }
 
   }
