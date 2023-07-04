@@ -6,7 +6,11 @@
     "moduleResolution": "node",
     "paths": {
       "@/*": [
-        "src/*"
+        "src/*",
+        "public/*"
+      ],
+      "@public/*": [
+        "public/*"
       ]
     },
     "lib": [
