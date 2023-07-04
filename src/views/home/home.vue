@@ -4,14 +4,7 @@
     <nav-bar></nav-bar>
 
     <!-- 轮播图 -->
-    <div class="banner">
-      <van-swipe>
-        <van-swipe-item>
-          <img src="https://pic.tujia.com/upload/resourcespic/day_230601/thumb/202306011051192791_750_250.jpg_.webp"
-            alt="">
-        </van-swipe-item>
-      </van-swipe>
-    </div>
+    <home-banner></home-banner>
 
     <!-- 定位 -->
     <div class="location">
@@ -26,20 +19,13 @@
 
 <script setup>
 import NavBar from '@/views/home/cpns/nav-bar/nav-bar.vue'
+import HomeBanner from '@/views/home/cpns/home-banner/home-banner.vue'
+
 
 </script>
 
 <style lang="less" scoped>
 .home {
-
-  .banner {
-    height: 128px;
-    background-color: aqua;
-
-    img {
-      width: 100%;
-    }
-  }
 
   .location {
     display: flex;
@@ -65,6 +51,7 @@ import NavBar from '@/views/home/cpns/nav-bar/nav-bar.vue'
         font-weight: 300;
         font-size: 12px;
         margin-right: 8px;
+        color: #666;
       }
 
       img {
