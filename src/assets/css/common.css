@@ -8,6 +8,7 @@ a {
 :root {
   /* 主题颜色 */
   --primary-color: #3cb490;
+  --van-tabbar-item-icon-size: 30px !important;
 }
 
 body {
