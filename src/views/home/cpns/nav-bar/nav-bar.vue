@@ -1,6 +1,6 @@
 <template>
   <div class="nav-bar">
-    <img src="/public/favicon.ico" alt="">
+    <img src="/favicon.ico" alt="">
     <span>熊猫旅途</span>
   </div>
 </template>
@@ -23,8 +23,8 @@
   span {
     margin-left: 6px;
     font-size: 18px;
-    font-weight: bold;
-    font-family: "YouYuan", "幼圆", "圆体", cursive;
+    font-weight: 400;
+    font-family: PingFangSC-Medium;
   }
 }
 </style>
