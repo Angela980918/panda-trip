@@ -1,0 +1,52 @@
+<template>
+  <div class="search-box">
+    <div class="location">
+      <div class="city">广州</div>
+      <div class="position">
+        <div class="text">我的位置</div>
+        <img src="@/assets/img/home/location.png" alt="">
+      </div>
+    </div>
+  </div>
+</template>
+
+<script setup>
+
+</script>
+
+<style lang="less" scoped>
+.search-box {
+  .location {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .city {
+      flex: 1;
+      margin-left: 20px;
+      font-size: 15px;
+      font-family: PingFangSC-Medium;
+      font-weight: 500;
+    }
+
+    .position {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 40px;
+      .text {
+        font-family: PingFangSC-Light;
+        font-weight: 300;
+        font-size: 12px;
+        margin-right: 8px;
+        color: #666;
+      }
+
+      img {
+        width: 20px;
+        margin-right: 20px;
+      }
+    }
+  }
+}
+</style>
