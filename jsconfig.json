@@ -10,7 +10,7 @@
         "public/*"
       ],
       "@public/*": [
-        "public/*"
+        "public"
       ]
     },
     "lib": [
