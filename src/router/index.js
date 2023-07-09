@@ -5,24 +5,33 @@ const router = createRouter({
   // 映射关系：path -> componen
   routes: [
     {
-      path: '/',
-      redirect: '/home' //重定向
+      path: "/",
+      redirect: "/home", //重定向
     },
     {
-      path: '/home',
-      component: () => import("@/views/home/home.vue")
+      path: "/home",
+      component: () => import("@/views/home/home.vue"),
     },
     {
-      path: '/favor',
-      component: () => import("@/views/favor/favor.vue")
-    },{
-      path: '/message',
-      component: () => import("@/views/message/message.vue")
-    },{
-      path: '/order',
-      component: () => import("@/views/order/order.vue")
+      path: "/favor",
+      component: () => import("@/views/favor/favor.vue"),
     },
-  ]
-})
+    {
+      path: "/message",
+      component: () => import("@/views/message/message.vue"),
+    },
+    {
+      path: "/order",
+      component: () => import("@/views/order/order.vue"),
+    },
+    {
+      path: "/city",
+      component: () => import("@/views/city/city.vue"),
+      meta: {
+        hideTabBar: true
+      }
+    }
+  ],
+});
 
-export default router
+export default router;

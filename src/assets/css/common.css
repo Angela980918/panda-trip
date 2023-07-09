@@ -14,3 +14,18 @@ a {
 body {
   font-size: 14px;
 }
+
+/* 隐藏TabBar的类 */
+.bar-hidden {
+  /* 占满整个屏幕 */
+  height: 100vh;
+  /* 有position，z-index才生效
+   这里如果是absolute则不生效,可能与TabBar组件相关样式有关 */
+  position: relative;
+  /* TabBar的z-index默认1 */
+  z-index: 9;
+  /* 背景色挡住TabBar */
+  background-color: #fff;
+  /* y轴方向溢出:滚动条 */
+  overflow-y: auto;
+}
