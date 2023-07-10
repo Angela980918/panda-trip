@@ -9,6 +9,11 @@ a {
   /* 主题颜色 */
   --primary-color: #3cb490;
   --van-tabbar-item-icon-size: 30px !important;
+  --van-search-left-icon-color: var(--primary-color) !important;
+  --van-tab-active-text-color: var(--primary-color) !important;
+  --van-tabs-bottom-bar-color: var(--primary-color) !important;
+  --van-tabs-line-height: 32px !important;
+  --van-tabs-bottom-bar-width: 40px !important;
 }
 
 body {
