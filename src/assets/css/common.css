@@ -14,6 +14,7 @@ a {
   --van-tabs-bottom-bar-color: var(--primary-color) !important;
   --van-tabs-line-height: 32px !important;
   --van-tabs-bottom-bar-width: 40px !important;
+  --van-back-top-background: var(--primary-color) !important;
 }
 
 body {

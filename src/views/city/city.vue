@@ -16,17 +16,8 @@
 
     <!-- 内容 滚动 -->
     <div class="content">
-      <template v-for="item in currentGroup?.cities">
-        <div class="group-item">
-          <h2 class="title">{{ item.group }} </h2>
-          <div class="list">
-            <template v-for="city in item.cities" :key="city.id">
-              <div class="list-item">
-                {{ city.cityName }}
-              </div>
-            </template>
-          </div>
-        </div>
+      <template v-for="(value, key, index) in allCities">
+        <city-group v-show="key === tabActive" :groupData="value"></city-group>
       </template>
     </div>
 
@@ -34,11 +25,11 @@
 </template>
 
 <script setup>
-import { ref, computed } from 'vue'
+import { ref } from 'vue'
 import { useRouter } from 'vue-router';
 import useCityStore from '@/store/modules/city'
 import { storeToRefs } from 'pinia';
-import { showToast } from 'vant/es';
+import cityGroup from '@/views/city/cpns/city-group.vue'
 
 const searchValue = ref('')
 const router = useRouter()
@@ -67,16 +58,20 @@ const onClickTab = (e) => {
 }
 
 // 获取选中标签后的数据,并且成为响应式数据
-const currentGroup = computed(() =>
-  allCities.value[tabActive.value]
-)
+// const currentGroup = computed(() =>
+//   allCities.value[tabActive.value]
+// )
 </script>
 
 <style lang="less" scoped>
 .city {
+
+  .top{
+    position: relative;
+    z-index: 9;
+  }
   .content {
     height: calc(100vh - 100px);
-    margin-top: 20px;
     overflow-y: auto;
   }
 }
