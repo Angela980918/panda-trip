@@ -134,6 +134,7 @@ const { hotData } = storeToRefs(homeStore)
     display: flex;
     justify-content: center;
     align-items: center;
+    border-bottom: 1px solid #eee;
 
     .city {
       flex: 1;
@@ -221,6 +222,7 @@ const { hotData } = storeToRefs(homeStore)
     font-family: PingFangSC-Regular;
     font-size: 14px;
     color: #999;
+    border-bottom: 1px solid #eee;
 
     .price {
       justify-content: center;
@@ -244,6 +246,7 @@ const { hotData } = storeToRefs(homeStore)
     color: #999;
     margin-top: 10px;
     height: 35px;
+    border-bottom: 1px solid #eee;
   }
 }
 </style>
