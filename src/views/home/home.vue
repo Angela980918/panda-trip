@@ -16,9 +16,6 @@ import NavBar from '@/views/home/cpns/nav-bar/nav-bar.vue'
 import HomeBanner from '@/views/home/cpns/home-banner/home-banner.vue'
 import HomeSearchBox from '@/views/home/cpns/home-searchbox/home-searchbox.vue'
 
-
-
 </script>
 
-<style lang="less" scoped>
-</style>
+<style lang="less" scoped></style>

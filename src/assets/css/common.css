@@ -15,6 +15,7 @@ a {
   --van-tabs-line-height: 32px !important;
   --van-tabs-bottom-bar-width: 40px !important;
   --van-back-top-background: var(--primary-color) !important;
+  --van-calendar-popup-height: 60% !important;
 }
 
 body {

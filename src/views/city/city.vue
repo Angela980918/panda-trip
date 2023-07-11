@@ -54,13 +54,9 @@ const onSearch = () => {
 
 //监听tab标签页点击
 const onClickTab = (e) => {
-  console.log(e);
+  // console.log(e);
 }
 
-// 获取选中标签后的数据,并且成为响应式数据
-// const currentGroup = computed(() =>
-//   allCities.value[tabActive.value]
-// )
 </script>
 
 <style lang="less" scoped>
