@@ -110,11 +110,10 @@ const onConfirm = (value) => {
   showCalendar.value = false;
 }
 
-// 热门搜索建议、宫格数据
+// 热门搜索建议
 // 发请求
 homeStore.fetchAllHotData()
-homeStore.fetchAllCategoryData()
-const { hotData, categoryData } = storeToRefs(homeStore)
+const { hotData } = storeToRefs(homeStore)
 
 // 跳转至search页面
 const searchBtnClick = () => {
