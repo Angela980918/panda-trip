@@ -8,3 +8,11 @@ export function getHotSuggest() {
         url: '/home/hotSuggests'
     })
 }
+
+export function getCategory() {
+    // request的index导出的是一个对象
+    return PTRequest.get({
+        // 参数也是一个对象
+        url: '/home/categories'
+    })
+}
