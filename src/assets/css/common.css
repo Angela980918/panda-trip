@@ -16,6 +16,9 @@ a {
   --van-tabs-bottom-bar-width: 40px !important;
   --van-back-top-background: var(--primary-color) !important;
   --van-calendar-popup-height: 60% !important;
+  /* 渐变色 */
+  --theme-linear-gradient:linear-gradient(90deg,#3cb490,#72c19d);
+
 }
 
 body {

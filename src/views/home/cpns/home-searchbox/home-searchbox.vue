@@ -49,6 +49,11 @@
       </template>
     </div>
 
+    <!-- 搜索 -->
+    <div class="searchBtn" @click="searchBtnClick">
+      开始搜索
+    </div>
+
 
   </div>
 </template>
@@ -69,7 +74,7 @@ const homeStore = useHomeStore()
 const positionClick = () => {
   navigator.geolocation.getCurrentPosition((res) => {
     console.log("获取成功", res);
-    // const latitude = res.coords.latitude;
+    // const latitude = res.coords.latitude; 
     // const longitude = res.coords.longitude;
   }, err => {
     console.log("获取失败", err);
@@ -105,10 +110,24 @@ const onConfirm = (value) => {
   showCalendar.value = false;
 }
 
-// 热门搜索建议
+// 热门搜索建议、宫格数据
 // 发请求
 homeStore.fetchAllHotData()
-const { hotData } = storeToRefs(homeStore)
+homeStore.fetchAllCategoryData()
+const { hotData, categoryData } = storeToRefs(homeStore)
+
+// 跳转至search页面
+const searchBtnClick = () => {
+  router.push({
+    path: '/search',
+    query: {
+      // 传递数据，响应式
+      startDate: startDate.value,
+      endDate: endDate.value,
+      selectedCity: selectedCity.value.cityName
+    }
+  });
+}
 </script>
 
 <style lang="less" scoped>
@@ -118,7 +137,7 @@ const { hotData } = storeToRefs(homeStore)
     flex-wrap: wrap;
     align-items: center;
     padding: 0 20px;
-    margin-top: 10px;  
+    margin-top: 10px;
 
     .hotItem {
       margin: 3px;
@@ -247,6 +266,19 @@ const { hotData } = storeToRefs(homeStore)
     margin-top: 10px;
     height: 35px;
     border-bottom: 1px solid #eee;
+  }
+
+  .searchBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 38px;
+    font-size: 18px;
+    color: #fff;
+    border-radius: 20px;
+    margin: 20px 20px;
+    // 渐变色
+    background-image: var(--theme-linear-gradient);
   }
 }
 </style>
