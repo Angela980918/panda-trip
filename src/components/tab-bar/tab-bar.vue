@@ -33,6 +33,9 @@ const currentIndex = ref(0)
 </script>
 
 <style lang="less" scoped>
+:deep(.van-tabbar-item) {
+  height: 50px;
+}
 .tab-bar {
   img {
     height: 30px;

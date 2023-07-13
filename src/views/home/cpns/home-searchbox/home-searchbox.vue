@@ -111,8 +111,6 @@ const onConfirm = (value) => {
 }
 
 // 热门搜索建议
-// 发请求
-homeStore.fetchAllHotData()
 const { hotData } = storeToRefs(homeStore)
 
 // 跳转至search页面

@@ -15,7 +15,6 @@ import { storeToRefs } from 'pinia';
 const homeStore = useHomeStore()
 
 // 分类数据
-homeStore.fetchAllCategoryData()
 const { categoryData } = storeToRefs(homeStore)
 </script>
 
