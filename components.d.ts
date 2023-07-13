@@ -7,6 +7,9 @@ export {}
 
 declare module 'vue' {
   export interface GlobalComponents {
+    copy: typeof import('./src/components/home-house-item/house-item-v9 copy.vue')['default']
+    HouseItemV3: typeof import('./src/components/home-house-item/house-item-v3.vue')['default']
+    HouseItemV9: typeof import('./src/components/home-house-item/house-item-v9.vue')['default']
     NavBar: typeof import('./src/components/nav-bar/nav-bar.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
