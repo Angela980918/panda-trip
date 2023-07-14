@@ -1,7 +1,6 @@
 <template>
   <div class="content">
-    <h2>热门精选</h2>
-    <button @click="houseLsitClick()">房屋列表点击</button>
+    <button @click="houseLsitClick" class="btn">加载更多</button>
     <div class="list">
       <template v-for="item in houseData" :key="item.data.houseId">
         <house-item-v9 v-if="item.discoveryContentType === 9" :item="item.data"/>
@@ -27,4 +26,12 @@ const houseLsitClick = () => {
 }
 </script>
 
-<style lang="less" scoped></style>
+<style lang="less" scoped>
+.content{
+  .list{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 10px;
+  }
+}
+</style>

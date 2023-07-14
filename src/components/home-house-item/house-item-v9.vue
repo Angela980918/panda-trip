@@ -7,26 +7,33 @@
       <div class="intro-bottom">
         <div class="summary">{{ item.summaryText }}</div>
         <div class="title">{{ item.houseName }}</div>
-        <div class="price">￥ {{ item.finalPrice }}</div>
+        <div class="pro-star">
+          <div class="star">
+            <van-rate allow-half :model-value="starValue" color="#fff" size="10px" :count="5" />
+          </div>
+          <div class="price">￥ {{ item.finalPrice }}</div>
+        </div>
       </div>
     </div>
   </div>
 </template>
 
 <script setup>
-defineProps({
+import { ref } from 'vue';
+const props = defineProps({
   item: {
     type: Object,
     default: () => ({})
   }
 })
+
+const starValue = ref(Number(props.item.commentScore));
 </script>
 
 <style lang="less" scoped>
 .house-v9 {
   // 每个item宽度占屏幕一半
   width: 50%;
-  margin-top: 20px;
 
   .item-card {
     // 信息在img上：子绝父相
@@ -43,11 +50,15 @@ defineProps({
     .intro-bottom {
       position: absolute;
       bottom: 0;
-      padding: 8px 10px;
+      padding: 10px;
       color: #fff;
 
       .summary {
-        font-size: 12px;
+        line-height: 12px;
+        margin-bottom: 4px;
+        font-family: PingFangSC-Regular;
+        font-size: 10px;
+        color: #fff;
       }
 
       .title {
@@ -57,8 +68,22 @@ defineProps({
         display: -webkit-box;
         -webkit-line-clamp: 2;
         -webkit-box-orient: vertical;
+        font-family: PingFangSC-Medium;
+        font-size: 14px;
+        color: #fff;
+        line-height: 17px;
+        margin-bottom: 6px;
+      }
 
-        margin: 5px 0;
+      .pro-star {
+        display: flex;
+        justify-content: space-between;
+
+        .price {
+          font-family: PingFangSC-Medium;
+          font-size: 16px;
+          color: #fff;
+        }
       }
     }
   }
