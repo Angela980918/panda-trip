@@ -1,6 +1,9 @@
 <template>
-  <div>
-    favor
+  <div class="favor">
+    <h2>favor</h2>
+    <template v-for="(item) in 100" >
+      <div>列表{{ item }}</div>
+    </template>
   </div>
 </template>
 
@@ -8,6 +11,10 @@
 
 </script>
 
-<style scoped>
-
+<style lang="less" scoped>
+.favor{
+  height: 80vh;
+  background-color: aquamarine;
+  overflow-y: auto;
+}
 </style>

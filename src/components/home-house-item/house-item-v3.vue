@@ -102,6 +102,7 @@ const props = defineProps({
         }
 
         .sale {
+          display: flex;
           font-size: 10px;
           color: #fff;
           background-image: linear-gradient(270deg, #f66, #ff9f9f);
