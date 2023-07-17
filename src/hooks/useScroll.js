@@ -1,25 +1,28 @@
 import { onMounted, onUnmounted } from "vue";
 import { ref } from "vue";
+import { throttle } from "underscore"; 
 
 // 封装滚动到底部自动加载的函数
 export default function useScroll() {
   // 初始默认为没有到底
   const isReachBottom = ref(false);
+  const scrollTop = ref(0);
+  const scrollHeight = ref(0);
+  const clientHeight = ref(0);
 
-  const scrollListener = () => {
+  const scrollListener = throttle(() => {
     // 文档距离窗口顶部的距离
-    const scrollTop = document.documentElement.scrollTop;
+    scrollTop.value = document.documentElement.scrollTop;
     // 页面总体长度
-    const scrollHeight = document.documentElement.scrollHeight;
+    scrollHeight.value = document.documentElement.scrollHeight;
     // 屏幕的长度
-    const clientHeight = document.documentElement.clientHeight;
-
-    if (clientHeight + scrollTop >= scrollHeight) {
+    clientHeight.value = document.documentElement.clientHeight;
+    if (clientHeight.value + scrollTop.value + 0.1 >= scrollHeight.value) {
       // homeStore.fetchAllHouse();
       console.log("加载更多");
       isReachBottom.value = true;
     }
-  };
+  }, 500);
 
   onMounted(() => {
     window.addEventListener("scroll", scrollListener);
@@ -29,5 +32,5 @@ export default function useScroll() {
     window.removeEventListener("scroll", scrollListener);
   });
 
-  return { isReachBottom }; 
+  return { isReachBottom, scrollTop, scrollHeight, clientHeight };
 }
