@@ -12,6 +12,9 @@
     <!-- 分类 -->
     <home-category></home-category>
 
+    <!-- 搜索框 -->
+    <div class="search" v-if="showSearchBox">我是搜索框内容</div>
+
     <!-- 热门精选 -->
     <home-content></home-content>
   </div>
@@ -25,7 +28,7 @@ import HomeCategory from '@/views/home/cpns/home-category/home-category.vue'
 import HomeContent from '@/views/home/cpns/home-content/home-content.vue'
 import useHomeStore from '@/store/modules/home'
 import useScroll from '@/hooks/useScroll'
-import { watch } from 'vue'
+import { watch, computed } from 'vue'
 
 // 发起网络请求
 const homeStore = useHomeStore()
@@ -40,16 +43,25 @@ homeStore.fetchAllHouse();
 //   // console.log('scrollHeight',scrollHeight,'scrollTop',scrollTop,'clientHeight',clientHeight);
 // })
 
-const { isReachBottom } = useScroll();
+const { isReachBottom, scrollTop } = useScroll();
 // watch监听
 watch(isReachBottom, (newValue) => {
   if (newValue) {
-    homeStore.fetchAllHouse().then(()=>{
+    homeStore.fetchAllHouse().then(() => {
       // 等待数据请求完成
       isReachBottom.value = false
     })
   }
 })
+
+// 搜索框显示的控制
+const showSearchBox = computed(() => {
+  return scrollTop.value >= 450
+})
+
+
+
+
 
 </script>
 
