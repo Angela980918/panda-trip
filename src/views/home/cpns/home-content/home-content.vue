@@ -1,6 +1,5 @@
 <template>
   <div class="content">
-    <button @click="houseLsitClick" class="btn">加载更多</button>
     <div class="list">
       <template v-for="item in houseData" :key="item.data.houseId">
         <house-item-v9 v-if="item.discoveryContentType === 9" :item="item.data"/>
