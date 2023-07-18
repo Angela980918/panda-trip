@@ -31,15 +31,6 @@ watch(route, (newRoute) => {
 
 })
 
-// const onChange = (active) => {
-//   console.log(active);
-// }
-
-// const itemClick = (index, path) => {
-//   // console.log(index);
-//   currentIndex.value = index
-//   router.push(path)
-// }
 
 
 
