@@ -14,14 +14,14 @@
       <div class="start">
         <div class="date">
           <span>入住</span>
-          <div class="time">{{ startDate }}</div>
+          <div class="time">{{ startDay }}</div>
         </div>
       </div>
       <div class="stay">共{{ stayDate }}晚</div>
       <div class="end">
         <div class="date">
           <span>离店</span>
-          <div class="time">{{ endDate }}</div>
+          <div class="time">{{ endDay }}</div>
         </div>
       </div>
     </div>
@@ -59,15 +59,17 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { ref,watch } from 'vue';
 import useCityStore from "@/store/modules/city";
 import useHomeStore from '@/store/modules/home';
+import useMainStore from '@/store/modules/main';
 import { storeToRefs } from "pinia";
 import { useRouter } from "vue-router";
 import { formatDate, getDiffDate } from "@/utils/format_date"
 const router = useRouter();
 const cityStore = useCityStore()
 const homeStore = useHomeStore()
+const mainStore = useMainStore()
 
 
 // 点击获取城市位置
@@ -94,17 +96,25 @@ const cityClick = () => {
 const { selectedCity } = storeToRefs(cityStore)
 
 // 日期处理
-const nowDate = new Date();
-const startDate = ref(formatDate(nowDate))
-const endDate = ref(formatDate(nowDate.setDate(nowDate.getDate() + 1)))
+const { startDate, endDate } = storeToRefs(mainStore)
+const startDay = ref(formatDate(startDate.value))
+const endDay = ref(formatDate(endDate.value))
+
+watch(startDate,(newValue)=>{
+  startDay.value=formatDate(startDate.value)
+})
+watch(endDate,(newValue)=>{
+  endDay.value=formatDate(endDate.value)
+})
+
 const stayDate = ref(1)
 
 // 日历
 const showCalendar = ref(false);
 const onConfirm = (value) => {
   // console.log(value);
-  startDate.value = formatDate(value[0]);
-  endDate.value = formatDate(value[1]);
+  mainStore.startDate = value[0];
+  mainStore.endDate = value[1];
   stayDate.value = getDiffDate(value[0], value[1]);
   // 隐藏日历
   showCalendar.value = false;
@@ -119,8 +129,8 @@ const searchBtnClick = () => {
     path: '/search',
     query: {
       // 传递数据，响应式
-      startDate: startDate.value,
-      endDate: endDate.value,
+      startDay: startDay.value,
+      endDay: endDay.value,
       selectedCity: selectedCity.value.cityName
     }
   });
