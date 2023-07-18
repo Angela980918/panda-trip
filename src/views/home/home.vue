@@ -13,7 +13,9 @@
     <home-category></home-category>
 
     <!-- 搜索框 -->
-    <div class="search" v-if="showSearchBox">我是搜索框内容</div>
+    <div class="search" v-if="showSearchBox">
+      <home-search-bar></home-search-bar>
+    </div>
 
     <!-- 热门精选 -->
     <home-content></home-content>
@@ -26,6 +28,7 @@ import HomeBanner from '@/views/home/cpns/home-banner/home-banner.vue'
 import HomeSearchBox from '@/views/home/cpns/home-searchbox/home-searchbox.vue'
 import HomeCategory from '@/views/home/cpns/home-category/home-category.vue'
 import HomeContent from '@/views/home/cpns/home-content/home-content.vue'
+import HomeSearchBar from '@/views/home/cpns/home-searchbar/home-searchbar.vue'
 import useHomeStore from '@/store/modules/home'
 import useScroll from '@/hooks/useScroll'
 import { watch, computed } from 'vue'
@@ -35,13 +38,6 @@ const homeStore = useHomeStore()
 homeStore.fetchAllCategoryData();
 homeStore.fetchAllHotData();
 homeStore.fetchAllHouse();
-
-// 监听window的滚动
-// window.addEventListener('scroll', () => {
-
-//   // 滚动到页面底部,相当于scrollHeight <= clientHeight + scrollTop 
-//   // console.log('scrollHeight',scrollHeight,'scrollTop',scrollTop,'clientHeight',clientHeight);
-// })
 
 const { isReachBottom, scrollTop } = useScroll();
 // watch监听
@@ -65,4 +61,16 @@ const showSearchBox = computed(() => {
 
 </script>
 
-<style lang="less" scoped></style>
+<style lang="less" scoped>
+.search{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 45px;
+  width: auto;
+  padding: 16px 16px 10px;
+  background-color: #fff;
+  z-index: 99;
+}
+</style>
