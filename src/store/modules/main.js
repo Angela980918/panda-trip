@@ -8,7 +8,8 @@ endDate.setDate(startDate.getDate() + 1)
 const useMainStore = defineStore('main', {
   state: () => ({
     startDate: startDate,
-    endDate: endDate
+    endDate: endDate,
+    showLoading: false, // 是否显示loading加载
   }),
   
   actions: {
