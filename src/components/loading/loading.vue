@@ -1,5 +1,5 @@
 <template>
-  <div class="loading">
+  <div class="loading" v-if="mainStore.showLoading" @click="loadingClick">
     <van-loading vertical color="#3cb490">
       <template #icon>
         <img class="logo" src="/favicon.ico" alt="">
@@ -10,6 +10,13 @@
 </template>
 
 <script setup>
+import useMainStore from '@/store/modules/main';
+
+const mainStore = useMainStore(); 	// Main store.
+
+const loadingClick = () => {
+  mainStore.showLoading = false;
+};
 
 </script>
 
