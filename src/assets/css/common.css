@@ -1,9 +1,4 @@
 /* custom */
-a {
-  color: black;
-  text-decoration: none;
-  backface-visibility: hidden;
-}
 
 :root {
   /* 主题颜色 */
@@ -16,13 +11,16 @@ a {
   --van-tabs-bottom-bar-width: 40px !important;
   --van-back-top-background: var(--primary-color) !important;
   --van-calendar-popup-height: 60% !important;
+  --van-nav-bar-icon-color: var(--primary-color) !important;
+  --van-nav-bar-text-color: var(--primary-color) !important;
   /* 渐变色 */
   --theme-linear-gradient:linear-gradient(90deg,#3cb490,#72c19d);
-
 }
 
 body {
   font-size: 14px;
+  height: 100%;
+  margin: 0;
 }
 
 /* 隐藏TabBar的类 */
