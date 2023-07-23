@@ -85,29 +85,38 @@ const getCategoryIndex = (item) => {
     }
 
     .indicator {
+      display: flex;
       position: absolute;
+      justify-content: space-between;
+      align-items: center;
       right: 16px;
       bottom: 20px;
       color: #fff;
       font-size: 12px;
-      height: 14px;
+      height: 16px;
       padding: 2px 5px;
       background-color: rgba(0, 0, 0, 0.8);
       // border-radius: 9px;
+      span{
+        justify-content: center;
+        align-items: center;
+      }
 
       .item {
         padding: 0 5px;
         margin-left: 5px;
+        justify-content: center;
+        align-items: center;
 
         &.active {
           background-color: #fff;
           color: #333;
           border-radius: 8px;
-          height: 100%;
+          justify-content: center;
+          align-items: center;
+          padding: 4px 2px;
         }
       }
-
-      span {}
 
       .item:last-child {
         margin-right: 5px;
