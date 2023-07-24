@@ -3,9 +3,19 @@
     <van-nav-bar title="房屋详情" left-text="返回" left-arrow clickable @click-left="onClickLeft">
     </van-nav-bar>
 
-    <!-- 轮播图 -->
     <div v-if="houseDetailData.mainPart">
+      <!-- 轮播图 -->
       <detail-swpie :swipeData="houseDetailData.mainPart.topModule.housePicture.housePics" />
+
+      <!-- info -->
+      <detail-info :topInfos="houseDetailData.mainPart.topModule" />
+
+
+      <!-- section  -->
+      <div class="facility">
+        <detail-section :topInfos="houseDetailData.mainPart.topModule"></detail-section>
+      </div>
+
     </div>
 
 
@@ -17,6 +27,8 @@ import { useRoute } from 'vue-router'
 import useDetailStore from '@/store/modules/detail'
 import { storeToRefs } from 'pinia';
 import detailSwpie from './cpns/detail-swipe/detail-swipe.vue'
+import detailInfo from './cpns/detail-info/detail-info.vue'
+import detailSection from './cpns/detail-section/detail-section.vue'
 
 const route = useRoute()
 // console.log(route);
@@ -41,8 +53,5 @@ const { houseDetailData } = storeToRefs(detailStore)
 </script>
 
 <style lang="less" scoped>
-.detail{
-
-}
-
+.detail {}
 </style>
