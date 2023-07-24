@@ -77,6 +77,7 @@ const getCategoryIndex = (item) => {
 <style lang="less" scoped>
 .swipe {
   .swipe-lsit {
+    height: 250px;
 
     .swipe-item {
       img {
