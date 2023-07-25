@@ -1,14 +1,14 @@
 <template>
   <div class="section">
     <div class="header">
-      <h2 class="title">title</h2>
+      <h2 class="title">{{ titleText }}</h2>
     </div>
     <div class="content">
       <slot>默认内容</slot>
     </div>
     <div class="footer">
       <span class="more">
-        更多
+        {{ moreText }}
         <van-icon name="arrow" />
       </span>
 
@@ -17,7 +17,16 @@
 </template>
 
 <script setup>
-
+defineProps({
+  titleText: {
+    type: String,
+    default: "默认标题props"
+  },
+  moreText: {
+    type: String,
+    default: "更多文本props"
+  }
+})
 </script>
 
 <style lang="less" scoped>
@@ -37,7 +46,7 @@
     }
   }
 
-  .content{
+  .content {
     padding: 8px 0;
   }
 
