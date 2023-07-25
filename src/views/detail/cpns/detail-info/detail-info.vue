@@ -4,7 +4,7 @@
 
     <div class="tags">
       <template v-for="(item, index) in houseTags" :key="index">
-        <span class="tag1" :class="item" v-if="item.tagText"
+        <span class="tag1" v-if="item.tagText"
           :style="{ color: item.tagText.color, background: item.tagText.background.color }">
           {{ item.tagText.text }}
         </span>
