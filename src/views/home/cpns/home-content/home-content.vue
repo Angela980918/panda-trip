@@ -23,7 +23,7 @@ const { houseData } = storeToRefs(homeStore)
 const router = useRouter()
 
 const houseDetailClick = (houseID) => {
-  console.log("房屋详情:", houseID);
+  // console.log("房屋详情:", houseID);
   router.push('/detail/'+ houseID)
 }
 </script>
