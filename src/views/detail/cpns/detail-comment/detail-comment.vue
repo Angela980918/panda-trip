@@ -97,7 +97,7 @@ const scoreTitleStr = (item, number) => {
       .overall {
         font-size: 48px;
         position: relative;
-        z-index: 9;
+        z-index: 1;
         align-content: center;
       }
     }
