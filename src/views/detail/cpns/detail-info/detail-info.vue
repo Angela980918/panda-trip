@@ -51,7 +51,7 @@ const props = defineProps({
     default: () => ({})
   }
 })
-console.log(props);
+// console.log(props);
 
 const houseTags = props.topInfos.houseTags
 const commentBrief = props.topInfos.commentBrief
