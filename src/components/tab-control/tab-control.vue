@@ -32,6 +32,7 @@ export default {
       this.$emit("tabItemClick", index);
     },
     setCurrentIndex(index) {
+      console.log('setCurrentIndex',index);
       this.currentIndex = index;
     },
   },
