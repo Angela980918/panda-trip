@@ -5,6 +5,7 @@
       v-if="showTabControl"
       :titles="names"
       @tabItemClick="tabClick"
+      ref="tabControlRef"
     />
     <van-nav-bar
       title="房屋详情"
@@ -65,11 +66,7 @@
       </detail-section>
 
       <!-- 预定须知  -->
-      <detail-section
-        name="须知"
-        :ref="getSectionRef"
-        :titleText="'预定须知'"
-      >
+      <detail-section name="须知" :ref="getSectionRef" :titleText="'预定须知'">
         <detailBook
           :rulesModule="houseDetailData.mainPart.dynamicModule.rulesModule"
         />
@@ -161,10 +158,17 @@ const getSectionRef = (value) => {
   sectionEls.value[name] = value.$el;
   // sectionEls.push(value.$el);
 };
+
+// 判断用户是否是点击tabs
+let isClick = false;
+let currentDistance = -1;
 const tabClick = (index) => {
   const key = Object.keys(sectionEls.value)[index];
   const el = sectionEls.value[key];
   let distance = el.offsetTop;
+
+  isClick = true;
+  currentDistance = distance;
   detailRef.value.scrollTo({
     top: distance,
     behavior: "smooth",
@@ -172,8 +176,30 @@ const tabClick = (index) => {
 };
 
 // 页面滚动, 滚动时匹配对应的tabControll的index
-const tabControlRef = ref()
+const tabControlRef = ref();
+watch(scrollTop, (newValue) => {
+  if (newValue === currentDistance) {
+    isClick = false;
+  }
+  if (isClick) return;
 
+  // 1.获取所有的区域的offsetTops
+  const els = Object.values(sectionEls.value);
+  const values = els.map((el) => el.offsetTop);
+  // console.log(els, values);
+
+  // 2.根据newValue去匹配想要索引
+  let index = values.length - 1;
+  for (let i = 0; i < values.length; i++) {
+    if (values[i] > newValue + 44) {
+      index = i - 1;
+      break;
+    }
+    1;
+  }
+  // console.log(index);
+  tabControlRef.value?.setCurrentIndex(index);
+});
 </script>
 
 <style lang="less" scoped>
