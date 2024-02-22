@@ -59,7 +59,8 @@ npm run dev
 
 # 部分页面截取
 ## 首页
-![](README_files\1.png)
+![Uploading image.png…]()
+
 
 ## 城市选择
 
