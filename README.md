@@ -45,46 +45,33 @@ npm run dev
 │       ├── home                # 首页
 │       ├── order               # 订单页
 │       └── message             # 信息页
-│       └── App.vue                 # 应用入口文件
-│   ├── utils                  # 全局方法
+│   ├── utils                  # 通用工具类
 │   ├── App.vue                # 入口页面
-│   ├── main.ts                # Vue初始化入口文件
-│   ├── pages.json             # 配置页面路由等页面类信息
-│   ├── manifest.json          # 配置appid等打包信息
-│   └── uni.scss               # uni-app 内置的常用样式变量
+│   └── main.ts                # Vue初始化入口文件
 ├── .editorconfig              # editorconfig 配置
 ├── .eslintrc.cjs              # eslint 配置
 ├── .prettierrc.json           # prettier 配置
 ├── .gitignore                 # git 忽略文件
 ├── index.html                 # H5 端首页
 ├── package.json               # package.json 依赖
-├── tsconfig.json              # typescript 配置
 └── vite.config.ts             # vite 配置
 ```
 
 # 部分页面截取
 ## 首页
-![](README_files/1.jpg)
-![](README_files/2.jpg)
+![image-20240222180328818](C:\Users\莫奇妙\AppData\Roaming\Typora\typora-user-images\image-20240222180328818.png)
+![image-20240222180339018](C:\Users\莫奇妙\AppData\Roaming\Typora\typora-user-images\image-20240222180339018.png)
 
-![](README_files/1.jpg)
-![](README_files/2.jpg)
+## 城市选择
 
-## 分类
-![](README_files/3.jpg)
+![image-20240222180403277](C:\Users\莫奇妙\AppData\Roaming\Typora\typora-user-images\image-20240222180403277.png)
 
-## 商品详情
-![](README_files/4.jpg)
-![](README_files/5.jpg)
-![](README_files/6.jpg)
+## 房屋详情
+![image-20240222180442261](C:\Users\莫奇妙\AppData\Roaming\Typora\typora-user-images\image-20240222180442261.png)
 
-## 购物车
-![](README_files/7.jpg)
+![image-20240222180559192](C:\Users\莫奇妙\AppData\Roaming\Typora\typora-user-images\image-20240222180559192.png)
 
-## 结算
-![](README_files/8.jpg)
+![image-20240222180607621](C:\Users\莫奇妙\AppData\Roaming\Typora\typora-user-images\image-20240222180607621.png)
 
-## 个人中心
-![](README_files/9.jpg)
-
+![image-20240222180617318](C:\Users\莫奇妙\AppData\Roaming\Typora\typora-user-images\image-20240222180617318.png)
 
