@@ -64,6 +64,6 @@ npm run dev
 
 ## 城市选择
 
-![333](C:\Users\yon\Desktop\333.jpg)
+![](README_files\1.png)
 
 ## 房屋详情
