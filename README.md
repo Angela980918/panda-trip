@@ -59,18 +59,10 @@ npm run dev
 
 # 部分页面截取
 ## 首页
-![](C:\Users\莫奇妙\Desktop\1.png)
+![](README_files\1.png)
 
 ## 城市选择
 
-![image-20240222180403277](C:\Users\莫奇妙\AppData\Roaming\Typora\typora-user-images\image-20240222180403277.png)
+
 
 ## 房屋详情
-![image-20240222180442261](C:\Users\莫奇妙\AppData\Roaming\Typora\typora-user-images\image-20240222180442261.png)
-
-![image-20240222180559192](C:\Users\莫奇妙\AppData\Roaming\Typora\typora-user-images\image-20240222180559192.png)
-
-![image-20240222180607621](C:\Users\莫奇妙\AppData\Roaming\Typora\typora-user-images\image-20240222180607621.png)
-
-![image-20240222180617318](C:\Users\莫奇妙\AppData\Roaming\Typora\typora-user-images\image-20240222180617318.png)
-
