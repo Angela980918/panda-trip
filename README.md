@@ -59,8 +59,8 @@ npm run dev
 
 # 部分页面截取
 ## 首页
-![image-20240222180328818](C:\Users\莫奇妙\AppData\Roaming\Typora\typora-user-images\image-20240222180328818.png)
-![image-20240222180339018](C:\Users\莫奇妙\AppData\Roaming\Typora\typora-user-images\image-20240222180339018.png)
+image.png
+image.png
 
 ## 城市选择
 
