@@ -59,7 +59,7 @@ npm run dev
 
 # 部分页面截取
 ## 首页
-![Uploading image.png…]()
+![1](C:\Users\yon\Desktop\1.jpg)
 
 
 ## 城市选择
