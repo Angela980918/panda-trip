@@ -1,4 +1,4 @@
-## 项目简介
+![2](https://github.com/yon6666/panda-trip/assets/46401679/bbbd8150-f0ab-420f-8f1c-9897848e17cb)## 项目简介
 
 熊猫旅途项目包含从首页浏览房子，房子详情，查看评价等功能(功能完善中)。
 
@@ -64,6 +64,7 @@ npm run dev
 
 ## 城市选择
 
-![](README_files\1.png)
+![3](https://github.com/yon6666/panda-trip/assets/46401679/f088e332-d02c-4b6a-9d77-4e241149cb23)
+
 
 ## 房屋详情
