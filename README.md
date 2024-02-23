@@ -59,11 +59,20 @@ npm run dev
 
 # 部分页面截取
 ## 首页
-![Uploading image.png…]()
-
+![Alt text](README_files/1.png)
+![Alt text](README_files/8.jpg)
 
 ## 城市选择
-
-
+![Alt text](README_files/4.jpg)
+![Alt text](README_files/7.jpg)
 
 ## 房屋详情
+![Alt text](README_files/2.jpg)
+![Alt text](README_files/3.jpg)
+ 
+## 加载页面
+![Alt text](README_files/6.jpg)
+
+## 热门评论
+![Alt text](README_files/5.jpg)
+
